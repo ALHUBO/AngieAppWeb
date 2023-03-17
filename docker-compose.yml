@@ -1,0 +1,40 @@
+version: "3.9"
+services:
+    db:
+        image: mysql
+        ports: 
+            - "3306:3306"
+        command: --default-authentication-plugin=mysql_native_password
+        environment:
+            MYSQL_DATABASE: 'angie'
+            MYSQL_USER: 'angie'
+            MYSQL_PASSWORD: '!SPRskLunK27'
+            MYSQL_ROOT_PASSWORD: '!SPRskLunK27'
+        volumes:
+            - ./dump:/docker-entrypoint-initdb.d
+            - ./conf:/etc/mysql/conf.d
+            - persistent:/var/lib/mysql
+        networks:
+            - default
+    www:
+        build: .
+        ports: 
+            - "80:80"
+        volumes:
+            - ./Angie:/var/www/html
+        links:
+            - db
+        networks:
+            - default
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        links: 
+            - db:db
+        ports:
+            - 8080:80
+        environment:
+            MYSQL_USER: "angie"
+            MYSQL_PASSWORD: "!SPRskLunK27"
+            MYSQL_ROOT_PASSWORD: "!SPRskLunK27"
+volumes:
+    persistent:
