@@ -3,11 +3,10 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generaci髇: 12-03-2023 a las 03:42:22
--- Versi髇 del servidor: 8.0.31
--- Versi髇 de PHP: 8.2.1
+-- Tiempo de generaci贸n: 18-03-2023 a las 00:05:29
+-- Versi贸n del servidor: 8.0.31
+-- Versi贸n de PHP: 8.2.1
 
-SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -16,7 +15,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES latin1 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de datos: `angie`
@@ -87,13 +86,13 @@ TRUNCATE TABLE `producto`;
 INSERT INTO `producto` (`id`, `name`, `extensions`, `Descript`, `Pric_C`, `Pric_V`, `categoria`, `upload`) VALUES
 (1, 'Botas Rosa Fuego', 'webp|', 'Botas altas sexys', 100, 1200, 1, '2023-02-11 20:12:37'),
 (2, 'Anillo Besto Frendo', 'webp|webp|webp|webp|', 'Como lo vio en la TV', 100, 500, 2, '2023-02-11 20:13:15'),
-(3, 'Kimetsu No Yaiba', 'jpeg|webp|webp|webp|webp|jpeg|jpeg|jpeg|jpeg|jpeg|jpeg|webp|jpeg|', 'Figuras de acci髇 de Kimetsu No Yaiba para jugar :v ', 12, 2500, 3, '2023-02-11 20:14:04'),
+(3, 'Kimetsu No Yaiba', 'jpeg|webp|webp|webp|webp|jpeg|jpeg|jpeg|jpeg|jpeg|jpeg|webp|jpeg|', 'Figuras de acci贸n de Kimetsu No Yaiba para jugar :v ', 12, 2500, 3, '2023-02-11 20:14:04'),
 (4, 'Zapatos de tacon alto', 'webp|', 'Unos rosas', 233, 2500, 1, '2023-02-11 20:21:46'),
 (5, 'Iphone 15 pro max turbo cargado', 'webp|', 'Pus el ipone', 400, 23500, 4, '2023-02-11 20:22:18'),
 (6, 'Conjunto de zapatos', 'webp|webp|webp|webp|', 'Variedad de zapatos', 12, 2222, 5, '2023-02-11 20:22:53'),
 (7, 'Cosplay de mona china', 'webp|', 'Un cosplay sexy', 23, 3234, 8, '2023-02-11 20:23:14'),
 (8, 'Supa Zapatos', 'webp|webp|webp|webp|', 'Zapatos altos', 23, 333, 7, '2023-02-11 20:25:51'),
-(9, 'Cuerpo humano de juguete', 'webp|webp|webp|', 'Para jugar al vendedor de 髍ganos', 12, 33, 6, '2023-02-11 20:27:13'),
+(9, 'Cuerpo humano de juguete', 'webp|webp|webp|', 'Para jugar al vendedor de 贸rganos', 12, 33, 6, '2023-02-11 20:27:13'),
 (10, 'Figurita de mona china', 'webp|webp|webp|', 'Una figurita para que te observe', 123, 3333, 7, '2023-02-11 20:27:47'),
 (11, 'Tira led', 'webp|', 'tira led para verte pro mientras ves tv', 23, 444, 4, '2023-02-11 20:28:09'),
 (12, 'Samsung tablet', 'webp|', 'una tablet samsung', 233, 4444, 2, '2023-02-11 20:28:52'),
@@ -130,7 +129,6 @@ TRUNCATE TABLE `user`;
 INSERT INTO `user` (`id`, `name`, `correo`, `pass`, `Facebook`) VALUES
 (1, 'AL Hubo', '', '', '5660477977408157'),
 (3, '', '', '', '');
-SET FOREIGN_KEY_CHECKS=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
