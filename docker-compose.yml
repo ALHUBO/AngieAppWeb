@@ -8,8 +8,8 @@ services:
         environment:
             MYSQL_DATABASE: 'angie'
             MYSQL_USER: 'angie'
-            MYSQL_PASSWORD: '!SPRskLunK27'
-            MYSQL_ROOT_PASSWORD: '!SPRskLunK27'
+            MYSQL_PASSWORD: '!SPRahb1234'
+            MYSQL_ROOT_PASSWORD: '!SPRahb1234'
         volumes:
             - ./dump:/docker-entrypoint-initdb.d
             - ./conf:/etc/mysql/conf.d
@@ -34,7 +34,7 @@ services:
             - 8080:80
         environment:
             MYSQL_USER: "angie"
-            MYSQL_PASSWORD: "!SPRskLunK27"
-            MYSQL_ROOT_PASSWORD: "!SPRskLunK27"
+            MYSQL_PASSWORD: "!SPRahb1234"
+            MYSQL_ROOT_PASSWORD: "!SPRahb1234"
 volumes:
     persistent:
