@@ -72,7 +72,6 @@ const Suche=()=>{
       $('.sucheIcon').addClass('sucheIcon_H');
       $('.sucheInput').addClass('sucheInput_H');
       $('.sucheInput').prop('disabled',true);
-      
     });
   }
   return <div style={{display: 'flex',display: 'flex',justifyContent: 'center',alignContent: 'center',maxHeight: '5vh'}}>
@@ -89,7 +88,8 @@ const ShoppingCar=()=>{
 }
 const BarMenu=({open=false,login=false,fncOpen=()=>{return;},fncLogin=()=>{return;},fncActionLog=()=>{return;},fncPage=()=>{return}})=>{
   const sty=(open)?{}:{width: '100%',left: '0%'};
-    return <div id="barMenu" style={sty}>
+    return (
+    <div id="barMenu" style={sty}>
       <div className="BarMenuDiv" style={{justifyContent: 'left'}}>
         <button id="MenuBttn" className={(open)?'MenuBttnX':''} onClick={()=>fncOpen(!open)}>
           <div></div>  
@@ -106,7 +106,14 @@ const BarMenu=({open=false,login=false,fncOpen=()=>{return;},fncLogin=()=>{retur
         <LikeItems/>
         <ShoppingCar/>
       </div>
-      </div>;
+
+      <div className="BarMenuDivV"><button id="MenuBttn" className={(open)?'MenuBttnX':''} onClick={()=>fncOpen(!open)}>
+          <div></div>  
+          <div></div>  
+          <div></div>  
+        </button></div>
+      <div className="BarMenuDivV" style={{display: 'none'}}><Suche/></div>
+      </div>);
 };
 
 const OptMenu=({val='NoN',fncPage=()=>{return;},fncOpen=()=>{return;}})=>{
@@ -178,7 +185,6 @@ const ContentApp=()=>{
   const [actionLog,setActionLog]=useState(false);//[false | login ] [true | logup]
   const [item,setItem]=useState(webConfig.Item);//id del ultimo producto visitado
 
-
   useEffect(() => {
     isLogin(setLogin);
 }, [])
@@ -208,14 +214,9 @@ const changePage=({P='inicio',Arg=''})=>{
       <Content open={open} page={page} fncLogin={logStatus} login={login} fncActionLog={setActionLog} fncItem={setItem} fncPage={changePage} item={item}/>
     </>
   );
-}
-const FullApp=() => {
-    return (
-      <ContentApp/>
-    );
 };
 
 
 const domContainer = document.querySelector('#allContent');
 const root = ReactDOM.createRoot(domContainer);
-root.render(FullApp());
+root.render(<ContentApp/>);

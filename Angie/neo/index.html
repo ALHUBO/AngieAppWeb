@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngieAppWeb</title>
+    
+
+    <link rel="stylesheet" href="CSS/main.css">
+    
+</head>
+<body>
+    <div id="WebApp" class="skeleton"></div>
+</body>
+<!--React Developer-->
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<!--React Developer-->
+
+<!--Jquery mejora JS-->
+<script src="JS/extern/jquery-3.6.0.min.js"></script>
+<!--Jquery mejora JS-->
+
+<!--Icons-->
+<script src="JS/extern/a076d05399.js" crossorigin="anonymous"></script>
+<!--Icons-->
+
+
+<script>
+    var itemInit='';
+</script>
+
+<!--JS ALHUBO-->
+<!--Globales-->
+<!--Variables y objetos-->
+<script type="text/babel" src="JS/mine/VGlobals.js"></script>
+<!--Funciones-->
+<script src="JS/mine/FGlobals.js"></script>
+<!--Globales-->
+
+<!--React Web-->
+<script type="text/babel" src="JS/mine/webApp.jsx"></script>
+<script type="text/babel" src="JS/mine/components.jsx"></script>
+
+<!--Iniciamos la Aplicacion-->
+<script type="text/babel">
+    $(document).ready(()=>{
+        var web= new WebObject();
+        web.initRender();
+        web.renderCSS();
+        
+    });
+</script>
+<!--JS ALHUBO-->
+</html>

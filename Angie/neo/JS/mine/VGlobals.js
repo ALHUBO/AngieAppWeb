@@ -23,21 +23,91 @@ function ListProductos(data){
         };
     }
 }
+class SmsSystem{
+    constructor({}){
+        this.sms= {};
+    }
+}
+
 
 //configuracion del sitio
-var webConfig={
-    Menu:{
-        open: pageMenuOpen//Default open?
-    },
-    Page:{
-        start: page2Load
-    },
-    Item: itemInit,
-    sms: {},
-    Categoris: {
+class WebObject{
+    constructor(){
+        let lru=new URL(window.location),
+        vr_MenuOpen=(lru.searchParams.get('menuO'))?true:false,
+        vr_page2Load=(lru.searchParams.get('menuO'))?lru.searchParams.get('menuO'):'inicio';
+        this.Menu={
+            open: vr_MenuOpen//Default open?
+        };
+        this.Page={
+            start: vr_page2Load
+        };
+        this.root={
 
+        };
+        //win o:[true=landscape]|[false=portrait]
+        this.win={
+            w: $(window).width(),
+            h:$(window).height(),
+            o: ($(window).width()>$(window).height())
+        }
     }
-};
+
+    set setPage(vr_page){
+        this.Page.start=vr_page;
+    }
+    set setMenuOpen(vr_open){
+        this.Menu.open=vr_open;
+    }
+    set setRoot(vr_name){
+        let vr_root=$('#'+vr_name);
+        if(vr_root===null) return false;
+        if(this.root[vr_name]!==undefined) return false;
+        this.root[vr_name]={RDOM: ReactDOM.createRoot(vr_root[0]),DOM: vr_root};
+        return true;
+    }
+
+    renderCSS(){
+        this.win={
+            w: $(window).width(),
+            h:$(window).height(),
+            o: ($(window).width()>$(window).height()) 
+        };
+        console.log(this.win);
+    }
+
+    initRender(){
+        /*let divs=['userPrefs','FullMenuAccess','QuickMenu']
+        let contents={
+            'FullMenuAccess': <BttnMenu open={this.Menu.open} fnc_open={this.toggleOpen()}/>,
+            'QuickMenu': <QuickMenu/>,
+            'userPrefs': <SecUserMenu/>
+        }
+        divs.forEach((i)=>{
+            //crea reices
+            this.setRoot=i;
+            //quita estilo de cargando
+            this.root[i].DOM.removeClass('skeleton');
+            //inserta datos
+            this.root[i].RDOM.render(contents[i]);
+        });*/
+        this.setRoot='WebApp';
+        this.root['WebApp'].DOM.removeClass('skeleton');
+        this.root['WebApp'].RDOM.render(<WebApp menuOpenDeflt={this.Menu.open}/>);
+    }
+}
+
+//configuracion de Angie AppWeb
+class AngieWebApp{
+    constructor({vr_itemInit=''}){
+        this.Item=vr_itemInit;
+        this.Categoris= {
+
+        }
+    }
+}
+
+
 
 //user propiedades
 var user={

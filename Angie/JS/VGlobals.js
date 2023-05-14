@@ -36,7 +36,8 @@ var webConfig={
     sms: {},
     Categoris: {
 
-    }
+    },
+    win: {}
 };
 
 //user propiedades
